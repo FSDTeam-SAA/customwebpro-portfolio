@@ -1,0 +1,12 @@
+export { Navbar } from "./Navbar";
+export { HeroSection } from "./HeroSection";
+export { LogoStrip } from "./LogoStrip";
+export { TrustSection } from "./TrustSection";
+export { ServicesSection } from "./ServicesSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { TeamSection } from "./TeamSection";
+export { TestimonialSection } from "./TestimonialSection";
+export { FaqSection } from "./FaqSection";
+export { ContactSection } from "./ContactSection";
+export { Footer } from "./Footer";
+export { A } from "./constants";

@@ -1,0 +1,4 @@
+import Image from "next/image";
+import { A } from "./constants";
+import { SectionHeading } from "./shared";
+export function TeamSection(){return <section className="bg-white px-5 py-[70px] md:px-7 lg:px-[6.875vw] lg:py-[100px]" id="teams"><SectionHeading eyebrow="Interactive team showcase" description="Our dedicated team of engineers, designers, and strategists working together. Tap or click on any member pin in the photo to view details.">Meet the Force Behind<br/><em className="not-italic text-[#ffeb69]">Custom Web Pro</em></SectionHeading><div className="relative mx-auto mt-12 h-[330px] max-w-[1656px] overflow-hidden rounded-2xl border-[7px] border-[#ffeb69] md:mt-20 md:h-[600px] lg:h-[866px] lg:border-[15px]"><Image className="object-cover" src={`${A}imgImage27.png`} alt="The CustomWeb Pro team" fill sizes="86vw"/></div></section>}
