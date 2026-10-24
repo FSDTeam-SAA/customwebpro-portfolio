@@ -16,6 +16,10 @@ const baseProjects: Array<ProjectCardProps & { category: Exclude<Filter, "All Pr
   { image: "/images/home/imgFrame68.png", imageAlt: "Fintech application case study", title: "UnifyIQ — Sales Management", accent: "SaaS Platform", description: "A scalable interface system with polished product storytelling, responsive behavior and a strong visual identity.", tags: ["Discovery", "Planning"], category: "Fintech", imageVariant: "unify" },
 ];
 
+baseProjects.forEach((project) => {
+  project.href = "/portfolio/project-details";
+});
+
 export function PortfolioGallery() {
   const [active, setActive] = useState<Filter>("All Projects");
   const reduceMotion = useReducedMotion();

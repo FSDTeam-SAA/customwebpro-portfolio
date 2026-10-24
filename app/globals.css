@@ -10,8 +10,27 @@
   html,
   body {
     margin: 0;
+    min-width: 320px;
+    overflow-x: hidden;
     scroll-behavior: smooth;
     font-family: var(--font-plus-jakarta-sans), sans-serif;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+  }
+
+  main,
+  section,
+  article,
+  header,
+  footer,
+  nav,
+  div {
+    min-width: 0;
   }
 
   button,

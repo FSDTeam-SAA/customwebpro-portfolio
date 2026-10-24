@@ -30,8 +30,8 @@ export function FaqSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-3 bg-white px-5 py-[70px] md:px-7 lg:grid-cols-[minmax(360px,1fr)_minmax(600px,900px)] lg:gap-[130px] lg:px-[6.875vw] lg:py-[100px]">
-      <div className="self-start lg:sticky lg:top-8">
+    <section className="mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-10 bg-white px-5 py-[70px] md:px-7 xl:grid-cols-[minmax(320px,1fr)_minmax(0,900px)] xl:gap-[clamp(48px,6.8vw,130px)] xl:px-[6.875vw] xl:py-[100px]">
+      <div className="self-start xl:sticky xl:top-28">
         <SectionHeading eyebrow="A few things you might ask" align="left">
           Let&apos;s make
           <br />

@@ -27,26 +27,27 @@ export function TrustSection() {
       <SectionHeading
         eyebrow="Why choose us"
         description="With over 6+ years of experience in AI development and 250+ satisfied clients, we deliver exceptional results that exceed expectations."
+        compactMobile
       >
         Your Trusted <em className="not-italic text-[#ffeb69]">AI Partner</em>{" "}
         on Fiverr
       </SectionHeading>
-      <div className="mx-auto mt-12 grid max-w-[1656px] grid-cols-1 gap-6 md:mt-20 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      <div className="mx-auto mt-12 grid max-w-[1656px] grid-cols-2 gap-3 sm:gap-5 md:mt-20 md:gap-6 lg:grid-cols-3 lg:gap-12">
         {cards.map((c) => (
           <article
             className="overflow-hidden rounded-2xl bg-[#fcfdfe] text-center shadow-[0_24px_23px_rgba(52,69,90,.11)]"
             key={c.title}
           >
             <Image
-              className="h-[220px] w-full object-cover md:h-[300px]"
+              className="h-[110px] w-full object-cover sm:h-[160px] md:h-[300px]"
               src={`${A}${c.image}`}
               alt=""
               width={1000}
               height={1000}
             />
-            <div className="min-h-[180px] p-6 pt-8 md:min-h-[300px]">
-              <h3 className="mb-4 text-2xl font-extrabold">{c.title}</h3>
-              <p className="m-0 text-[15px] leading-normal md:text-lg md:leading-7">
+            <div className="min-h-[190px] p-3 pt-4 sm:min-h-[210px] sm:p-5 md:min-h-[300px] md:p-6 md:pt-8">
+              <h3 className="mb-2 text-base font-extrabold leading-tight sm:mb-3 sm:text-xl md:mb-4 md:text-2xl">{c.title}</h3>
+              <p className="m-0 text-[12px] leading-[1.45] sm:text-sm md:text-lg md:leading-7">
                 {c.text}
               </p>
             </div>

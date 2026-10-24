@@ -8,11 +8,13 @@ export function SectionHeading({
   children,
   description,
   align = "center",
+  compactMobile = true,
 }: {
   eyebrow: string;
   children: React.ReactNode;
   description?: string;
   align?: "center" | "left";
+  compactMobile?: boolean;
 }) {
   const left = align === "left";
   const reduceMotion = useReducedMotion();
@@ -33,11 +35,11 @@ export function SectionHeading({
         </span>
         {eyebrow}
       </m.div>
-      <m.h2 variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0 } }} className="m-0 text-[42px] font-semibold leading-[1.12] tracking-[-1.8px] text-[#033c38] [&_em]:text-[#FFEB69] [&_em]:[-webkit-text-stroke:1px_#033C38] [&_em]:[paint-order:stroke_fill] md:text-6xl lg:text-[80px] lg:tracking-[-3px]">
+      <m.h2 variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0 } }} className={`m-0 font-semibold leading-[1.12] tracking-[-1.8px] text-[#033c38] [&_em]:text-[#FFEB69] [&_em]:[-webkit-text-stroke:1px_#033C38] [&_em]:[paint-order:stroke_fill] md:text-6xl lg:text-[80px] lg:tracking-[-3px] ${compactMobile ? "text-[34px] sm:text-[42px]" : "text-[42px]"}`}>
         {children}
       </m.h2>
       {description && (
-        <m.p variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }} className="m-0 max-w-[764px] text-base leading-[25px] text-[#5c5c5c] md:text-xl md:leading-[30px]">
+        <m.p variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }} className={`m-0 max-w-[764px] text-[#5c5c5c] md:text-xl md:leading-[30px] ${compactMobile ? "text-[13px] leading-5 sm:text-base sm:leading-[25px]" : "text-base leading-[25px]"}`}>
           {description}
         </m.p>
       )}

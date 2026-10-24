@@ -17,9 +17,9 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative grid min-h-[795px] grid-cols-1 overflow-hidden bg-[#FFFADE] lg:grid-cols-2 lg:gap-16 lg:px-32 lg:py-12"
+      className="relative grid min-h-[795px] grid-cols-1 overflow-hidden bg-[#FFFADE] xl:grid-cols-2 xl:gap-12 xl:px-[6.875vw] xl:py-12 2xl:gap-16"
     >
-      <div className="pointer-events-none absolute inset-0 hidden lg:block">
+      <div className="pointer-events-none absolute inset-0 hidden xl:block">
         <Image
           src={`${A}imgProjectHelpCard.png`}
           alt=""
@@ -30,26 +30,26 @@ export function ContactSection() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0)_47.969%,#FFFAD8_48.051%)]" />
       </div>
 
-      <div className="relative flex min-w-0 flex-col items-start gap-12 overflow-hidden px-5 py-12 sm:px-10 lg:overflow-visible lg:p-0">
+      <div className="relative flex min-w-0 flex-col items-start gap-10 overflow-hidden px-5 py-12 sm:gap-12 sm:px-10 xl:overflow-visible xl:p-0">
         <Image
           src={`${A}imgProjectHelpCard.png`}
           alt=""
           fill
-          sizes="(max-width: 1023px) 100vw, 1px"
-          className="z-0 object-cover lg:hidden"
+          sizes="(max-width: 1279px) 100vw, 1px"
+          className="z-0 object-cover xl:hidden"
         />
-        <div className="absolute inset-0 z-0 bg-black/20 lg:hidden" />
+        <div className="absolute inset-0 z-0 bg-black/20 xl:hidden" />
 
         <div className="relative z-10 w-full">
-          <h2 className="m-0 text-[44px] font-semibold leading-[1.12] tracking-[-2px] text-white sm:text-[58px] lg:w-[766px] lg:text-[80px] lg:leading-[1.2] lg:tracking-[-3px]">
+          <h2 className="m-0 text-[34px] font-semibold leading-[1.12] tracking-[-1.5px] text-white min-[380px]:text-[40px] sm:text-[58px] xl:w-[min(766px,100%)] xl:text-[64px] xl:leading-[1.2] xl:tracking-[-3px] 2xl:text-[80px]">
             LET&apos;S DISCUSS
-            <span className="mt-1 flex items-center gap-3 sm:gap-5 lg:mt-0 lg:gap-4">
+            <span className="mt-1 flex items-center gap-2 min-[380px]:gap-3 sm:gap-5 xl:mt-0 xl:gap-4">
               <Image
                 src={`${A}imgGroup5.svg`}
                 alt=""
                 width={82}
                 height={80}
-                className="h-[52px] w-[54px] shrink-0 sm:h-[66px] sm:w-[68px] lg:h-[80px] lg:w-[82px]"
+                className="h-[38px] w-[40px] shrink-0 min-[380px]:h-[46px] min-[380px]:w-[48px] sm:h-[66px] sm:w-[68px] xl:h-[70px] xl:w-[72px] 2xl:h-[80px] 2xl:w-[82px]"
               />
               YOUR PROJECT
             </span>
@@ -67,28 +67,28 @@ export function ContactSection() {
             />
           </div>
           <div className="flex flex-col items-start gap-3 text-white lg:gap-5">
-            <p className="m-0 text-[32px] font-extralight leading-normal lg:text-[40px]">
+            <p className="m-0 text-[32px] font-extralight leading-normal xl:text-[40px]">
               Biplob Hossain
             </p>
-            <p className="m-0 text-xl font-extralight leading-5 text-[#F2EFE7] lg:text-2xl">
+            <p className="m-0 text-xl font-extralight leading-5 text-[#F2EFE7] xl:text-2xl">
               CustomWeb Pro
             </p>
           </div>
         </div>
       </div>
 
-      <form className="relative flex min-w-0 flex-col items-start gap-6 self-stretch bg-[#FFFADE] px-5 py-12 text-[#033C38] sm:px-10 lg:bg-transparent lg:p-0">
-        <label className="flex h-[88px] w-full flex-col items-start gap-2 text-xl font-semibold lg:text-2xl">
+      <form className="relative flex min-w-0 flex-col items-start gap-7 self-stretch bg-[#FFFADE] px-5 py-12 text-[#033C38] sm:px-10 xl:bg-transparent xl:p-0">
+        <label className="flex min-h-[88px] w-full flex-col items-start gap-2 text-xl font-semibold xl:text-2xl">
           Full Name
           <input className={fieldClass} type="text" placeholder="E.G. ALEX MORGAN" />
         </label>
 
         <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-2">
-          <label className="flex h-[88px] min-w-0 flex-col items-start gap-2 text-xl font-semibold lg:text-2xl">
+          <label className="flex min-h-[88px] min-w-0 flex-col items-start gap-2 text-xl font-semibold xl:text-2xl">
             Your Email
             <input className={fieldClass} type="email" placeholder="yourmail@gmail.com" />
           </label>
-          <label className="flex h-[88px] min-w-0 flex-col items-start gap-2 text-xl font-semibold lg:text-2xl">
+          <label className="flex min-h-[88px] min-w-0 flex-col items-start gap-2 text-xl font-semibold xl:text-2xl">
             Whatsapp Number
             <span className="flex w-full items-center border-b border-[#5C5C5C] px-2 py-4 focus-within:border-[#033C38]">
               <Image
@@ -109,7 +109,7 @@ export function ContactSection() {
         </div>
 
         <fieldset className="m-0 flex w-full flex-col gap-4 border-0 p-0">
-          <legend className="mb-4 text-xl font-semibold lg:text-2xl">Project Budget</legend>
+          <legend className="mb-4 text-xl font-semibold xl:text-2xl">Project Budget</legend>
           <div className="flex flex-wrap items-start gap-4">
             {budgets.map((budget) => (
               <label
@@ -123,7 +123,7 @@ export function ContactSection() {
           </div>
         </fieldset>
 
-        <label className="flex min-h-0 w-full flex-1 flex-col items-start gap-4 text-xl font-semibold lg:text-2xl">
+        <label className="flex min-h-0 w-full flex-1 flex-col items-start gap-4 text-xl font-semibold xl:text-2xl">
           Project Details
           <textarea
             className={`${fieldClass} h-[83px] resize-none`}
@@ -132,7 +132,7 @@ export function ContactSection() {
         </label>
 
         <button
-          className="flex h-[52px] cursor-pointer items-center justify-center gap-2.5 rounded-sm border border-[#033C38] bg-[#033C38] px-7 text-base font-medium text-white transition-colors hover:bg-[#FFEB69] hover:text-[#033C38]"
+          className="flex h-[52px] cursor-pointer items-center justify-center gap-2.5 !rounded-[12px] border border-[#033C38] bg-[#033C38] px-7 text-base font-medium text-white transition-colors hover:bg-[#FFEB69] hover:text-[#033C38]"
           type="submit"
         >
           Send Inquiry <ArrowUpRight size={18} />

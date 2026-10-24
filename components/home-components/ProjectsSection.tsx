@@ -10,6 +10,7 @@ const projects: ProjectCardProps[] = [
     accent: "Management Platform",
     description: "Landify case study: a real estate management platform with brand identity, dashboard UI, and responsive web design by ZeeTech. See the full ecosystem.",
     tags: ["Branding & Product design", "Real Estate"],
+    href: "/portfolio/project-details",
   },
   {
     image: "/images/home/imgFrame68.png",
@@ -19,6 +20,7 @@ const projects: ProjectCardProps[] = [
     description: "UnifyIQ case study: a sales management SaaS website designed and built in Webflow by ZeeTech — UI/UX, product storytelling, and conversion-focused pages.",
     tags: ["Webflow template", "SAAS"],
     imageVariant: "unify",
+    href: "/portfolio/project-details",
   },
 ];
 
@@ -34,7 +36,7 @@ export function ProjectsSection() {
             <p className="text-sm font-medium uppercase leading-5 tracking-[1px] text-[#033C38] sm:text-base">Featured projects</p>
           </div>
 
-          <h2 className="text-[42px] font-extrabold leading-[1.2] tracking-[-1.5px] text-[#033C38] sm:text-[56px] lg:text-[80px] lg:leading-[1.15] lg:tracking-[-3px]">
+          <h2 className="text-[34px] font-extrabold leading-[1.2] tracking-[-1.5px] text-[#033C38] sm:text-[56px] lg:text-[80px] lg:leading-[1.15] lg:tracking-[-3px]">
             Projects that<br />
             <span className="text-[#FFEB69] [-webkit-text-stroke:1px_#033C38] [paint-order:stroke_fill]">drive real</span>{" "}
             impact
@@ -42,7 +44,7 @@ export function ProjectsSection() {
         </div>
 
         <div className="w-full max-w-[533px] pb-1 text-[#5C5C5C]">
-          <p className="text-base leading-7 tracking-[0.4px] sm:text-xl sm:leading-[1.5]">
+          <p className="text-[13px] leading-5 tracking-[0.3px] sm:text-xl sm:leading-[1.5] sm:tracking-[0.4px]">
             Explore a diverse portfolio of completed works that showcase our creativity, technical expertise, and commitment to client satisfaction. Each project reflects our passion for quality and innovation.
           </p>
           <a href="#contact" className="mt-4 inline-flex h-[52px] items-center justify-center gap-2 rounded-lg bg-[#063B26] px-7 text-base font-medium text-white transition-colors hover:bg-[#0a5138] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#063B26] sm:text-xl">
@@ -52,8 +54,8 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      <div className="mx-auto grid max-w-[1664px] grid-cols-1 gap-12 md:grid-cols-2">
-        {projects.map((project) => <ProjectCard key={project.title} {...project} />)}
+      <div className="mx-auto grid max-w-[1664px] grid-cols-2 gap-3 sm:gap-8 md:gap-12">
+        {projects.map((project) => <ProjectCard key={project.title} {...project} compactMobile />)}
       </div>
     </section>
   );
