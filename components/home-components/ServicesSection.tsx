@@ -1,5 +1,5 @@
 import { ServiceCard, services } from "@/components/common";
-import { ProjectButton, SectionHeading } from "./shared";
+import { SectionHeading } from "./shared";
 
 export function ServicesSection() {
   return (
