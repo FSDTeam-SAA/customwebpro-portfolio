@@ -28,9 +28,9 @@ export default function HomePage() {
         <Reveal>
           <ProjectsSection />
         </Reveal>
-        <Reveal direction="left">
+        {/* <Reveal direction="left">
           <TeamSection />
-        </Reveal>
+        </Reveal> */}
         <Reveal direction="right">
           <TestimonialSection />
         </Reveal>
