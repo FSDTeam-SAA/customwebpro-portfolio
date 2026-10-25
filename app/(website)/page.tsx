@@ -6,7 +6,7 @@ import {
   Navbar,
   ProjectsSection,
   ServicesSection,
-  TeamSection,
+  // TeamSection,
   TestimonialSection,
   TrustSection,
 } from "@/components/home-components";
