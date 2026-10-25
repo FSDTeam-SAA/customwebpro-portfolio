@@ -29,7 +29,7 @@ export function TrustSection() {
         description="With over 6+ years of experience in AI development and 250+ satisfied clients, we deliver exceptional results that exceed expectations."
         compactMobile
       >
-        Your Trusted <em className="not-italic text-[#ffeb69]">AI Partner</em>{" "}
+        Your Trusted <em className="not-italic text-[#A97DDE]">AI Partner</em>{" "}
         on Fiverr
       </SectionHeading>
       <div className="mx-auto mt-12 grid max-w-[1656px] grid-cols-2 gap-3 sm:gap-5 md:mt-20 md:gap-6 lg:grid-cols-3 lg:gap-12">

@@ -94,7 +94,7 @@ export function Footer() {
           <div className="flex items-start lg:pt-[102px]">
             <a
               href="/contact"
-              className="group inline-flex items-center gap-3 rounded-lg bg-[#A97DDE] px-5 py-4 text-xl font-semibold text-[#033C38] no-underline transition-colors hover:bg-[#b890e7] sm:text-2xl"
+              className="group inline-flex items-center gap-3 rounded-lg bg-[#A97DDE] px-5 py-4 text-xl font-semibold text-[#FFFFFF] no-underline transition-colors hover:bg-[#b890e7] sm:text-2xl"
             >
               Get Started
               <ArrowRight

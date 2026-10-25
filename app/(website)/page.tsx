@@ -1,6 +1,5 @@
 import {
   ContactSection,
-  FaqSection,
   Footer,
   HeroSection,
   LogoStrip,
@@ -18,8 +17,8 @@ export default function HomePage() {
     <MotionProvider>
       <main className="overflow-x-clip bg-white text-[#033c38]">
         <Navbar />
-        <HeroSection />
-        <LogoStrip />
+        <Reveal><HeroSection /></Reveal>
+        <Reveal delay={0.05}><LogoStrip /></Reveal>
         <Reveal direction="left">
           <TrustSection />
         </Reveal>
@@ -34,9 +33,6 @@ export default function HomePage() {
         </Reveal>
         <Reveal direction="right">
           <TestimonialSection />
-        </Reveal>
-        <Reveal>
-          <FaqSection />
         </Reveal>
         <Reveal>
           <ContactSection />

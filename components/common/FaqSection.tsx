@@ -3,7 +3,7 @@
 import { AnimatePresence, m, useReducedMotion } from "framer-motion";
 import { useState } from "react";
 import { SectionHeading } from "../home-components/shared";
-const faqs = [
+export const faqs = [
   [
     "1. What Services Does CustomWeb Pro Offer?",
     "CustomWeb Pro offers AI-powered website development, mobile app development, full-stack web solutions, SaaS platforms, AI agents, chatbots, business automation, WordPress website design, and interactive online coding lessons.",
@@ -25,19 +25,20 @@ const faqs = [
     "Getting started is easy! Share your idea, project requirements, and goals with me. I’ll review your needs and recommend a suitable solution, timeline, and budget. Project-based services start at $90, AI and full-stack development projects start at $150, and hourly services start at $25, depending on the scope and complexity of the work.",
   ],
 ];
-export function FaqSection() {
+export function FaqAccordion({ embedded = false }: { embedded?: boolean }) {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
   const reduceMotion = useReducedMotion();
 
   return (
-    <section id="faq" className="mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-10 bg-white px-5 py-[70px] md:px-7 xl:grid-cols-[minmax(320px,1fr)_minmax(0,900px)] xl:gap-[clamp(48px,6.8vw,130px)] xl:px-[6.875vw] xl:py-[100px]">
-      <div className="self-start xl:sticky xl:top-28">
-        <SectionHeading eyebrow="A few things you might ask" align="left">
-          Let&apos;s make
-          <br />
-          <em className="not-italic text-[#ffeb69]">things clear.</em>
-        </SectionHeading>
-      </div>
+    <div className={embedded ? "min-w-0" : "mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-10 bg-white px-5 py-[70px] md:px-7 xl:grid-cols-[minmax(320px,1fr)_minmax(0,900px)] xl:gap-[clamp(48px,6.8vw,130px)] xl:px-[6.875vw] xl:py-[100px]"}>
+      {!embedded && (
+        <div className="self-start xl:sticky xl:top-28">
+          <SectionHeading eyebrow="A few things you might ask" align="left">
+            Let&apos;s make<br />
+            <em className="not-italic text-[#A97DDE]">things clear.</em>
+          </SectionHeading>
+        </div>
+      )}
       <m.div
         initial={reduceMotion ? false : "hidden"}
         whileInView="visible"
@@ -102,6 +103,10 @@ export function FaqSection() {
           );
         })}
       </m.div>
-    </section>
+    </div>
   );
+}
+
+export function FaqSection() {
+  return <section id="faq"><FaqAccordion /></section>;
 }

@@ -30,12 +30,12 @@ export function SectionHeading({
       }}
     >
       <m.div variants={{ hidden: { opacity: 0, x: -18 }, visible: { opacity: 1, x: 0 } }} className="flex items-center gap-2 text-xs font-medium uppercase text-black md:text-lg">
-        <span className="rounded-full border border-dashed border-[#ffeb69] p-2 text-xs text-[#033c38]">
+        <span className="rounded-full border border-dashed border-[#A97DDE] p-2 text-xs text-[#033c38]">
           ◆
         </span>
         {eyebrow}
       </m.div>
-      <m.h2 variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0 } }} className={`m-0 font-semibold leading-[1.12] tracking-[-1.8px] text-[#033c38] [&_em]:text-[#FFEB69] [&_em]:[-webkit-text-stroke:1px_#033C38] [&_em]:[paint-order:stroke_fill] md:text-6xl lg:text-[80px] lg:tracking-[-3px] ${compactMobile ? "text-[34px] sm:text-[42px]" : "text-[42px]"}`}>
+      <m.h2 variants={{ hidden: { opacity: 0, y: 22 }, visible: { opacity: 1, y: 0 } }} className={`m-0 font-semibold leading-[1.12] tracking-[-1.8px] text-[#033c38] [&_em]:text-[#A97DDE] [&_em]:[-webkit-text-stroke:1px_#033C38] [&_em]:[paint-order:stroke_fill] md:text-6xl lg:text-[80px] lg:tracking-[-3px] ${compactMobile ? "text-[34px] sm:text-[42px]" : "text-[42px]"}`}>
         {children}
       </m.h2>
       {description && (
@@ -57,7 +57,7 @@ export function ProjectButton({
 }) {
   return (
     <m.a
-      className={`inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-lg px-7 text-base font-semibold no-underline ${dark ? "border border-white bg-[#033c38] text-white" : "bg-[#FFEB69] text-[#0E0E0D]"}`}
+      className={`inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-lg px-7 text-base font-semibold no-underline ${dark ? "border border-white bg-[#033c38] text-white" : "bg-[#A97DDE] text-white"}`}
       href={href}
       whileHover={{ y: -3, scale: 1.02 }}
       whileTap={{ scale: 0.97 }}

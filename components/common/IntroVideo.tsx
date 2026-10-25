@@ -1,40 +1,34 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type IntroPhase = "visible" | "leaving" | "hidden";
 
 export function IntroVideo() {
-  const pathname = usePathname();
-  const [phase, setPhase] = useState<IntroPhase>(
-    pathname === "/" ? "visible" : "hidden",
-  );
-  const hideTimerRef = useRef<number | null>(null);
-  const hasFinishedRef = useRef(false);
+  const [phase, setPhase] = useState<IntroPhase>("hidden");
 
   const finishIntro = useCallback(() => {
-    if (hasFinishedRef.current) return;
-    hasFinishedRef.current = true;
-    setPhase("leaving");
-    hideTimerRef.current = window.setTimeout(() => setPhase("hidden"), 750);
+    setPhase((current) => (current === "visible" ? "leaving" : current));
   }, []);
 
   useEffect(() => {
-    if (pathname !== "/") {
-      setPhase("hidden");
-      return;
-    }
+    const navigation = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+    if (navigation?.type === "reload") setPhase("visible");
+  }, []);
 
-    const safetyTimer = window.setTimeout(finishIntro, 5350);
+  useEffect(() => {
+    if (phase !== "visible") return;
 
-    return () => {
-      window.clearTimeout(safetyTimer);
-      if (hideTimerRef.current !== null) {
-        window.clearTimeout(hideTimerRef.current);
-      }
-    };
-  }, [finishIntro, pathname]);
+    const safetyTimer = window.setTimeout(finishIntro, 5200);
+    return () => window.clearTimeout(safetyTimer);
+  }, [finishIntro, phase]);
+
+  useEffect(() => {
+    if (phase !== "leaving") return;
+
+    const hideTimer = window.setTimeout(() => setPhase("hidden"), 650);
+    return () => window.clearTimeout(hideTimer);
+  }, [phase]);
 
   if (phase === "hidden") return null;
 
@@ -76,7 +70,10 @@ export function IntroVideo() {
           </svg>
         </div>
 
-        <div className="intro-wordmark overflow-hidden whitespace-nowrap">
+        <div
+          className="intro-wordmark overflow-hidden whitespace-nowrap"
+          onAnimationEnd={finishIntro}
+        >
           <div className="pl-3 text-[32px] font-extrabold tracking-[-2px] text-[#111] sm:pl-5 sm:text-[58px]">
             CustomWeb<span className="text-[#033C38]">Pro</span>
           </div>

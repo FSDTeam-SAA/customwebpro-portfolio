@@ -68,7 +68,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="grid min-h-0 place-items-center bg-[linear-gradient(180deg,rgba(255,235,105,.52)_0%,rgba(130,167,0,.22)_32%,rgba(6,59,38,0)_100%)] px-5 pb-14 pt-10 md:px-7 md:pt-14 lg:min-h-[996px] lg:px-[6.875vw] lg:pb-[50px] lg:pt-14"
+      className="grid min-h-0 place-items-center bg-[linear-gradient(180deg,rgba(169,125,222,.62)_0%,rgba(130,96,171,.31)_34%,rgba(91,68,120,0)_100%)] px-5 pb-14 pt-10 md:px-7 md:pt-14 lg:min-h-[996px] lg:px-[6.875vw] lg:pb-[50px] lg:pt-14"
     >
       <m.div className="flex w-full max-w-[1656px] flex-col items-center gap-6 lg:grid lg:grid-cols-[minmax(0,760px)_minmax(430px,617px)] lg:justify-between lg:gap-[60px]" initial={reduceMotion ? false : "hidden"} animate="visible" variants={{ visible: { transition: { staggerChildren: 0.12, delayChildren: 0.12 } } }}>
         <m.div variants={item} transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}>
@@ -76,7 +76,7 @@ export function HeroSection() {
             Your next idea.
             <br />
             Built{" "}
-            <span className="text-[#FFEB69] [-webkit-text-stroke:1px_#033C38] [paint-order:stroke_fill]">
+            <span className="text-[#A97DDE] [-webkit-text-stroke:1px_#033C38] [paint-order:stroke_fill]">
               with care.
             </span>
           </m.h1>
@@ -96,13 +96,13 @@ export function HeroSection() {
               >
                 <strong className="flex items-center gap-1 text-base">
                   {title}
-                  {i === 1 && <Star size={15} fill="#ffeb69" />}
+                  {i === 1 && <Star size={15} fill="#A97DDE" />}
                 </strong>
                 <small className="text-[14px] text-[#d4d9cc]">{label}</small>
               </div>
             ))}
             <a
-              className="flex h-12 w-full  items-center justify-center gap-2 rounded-lg border border-[#ffeb69] bg-[#087a4b] px-[22px] text-white no-underline md:w-auto"
+              className="flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-[#A97DDE] bg-[#087a4b] px-[22px] text-white no-underline transition-colors hover:bg-[#06653f] md:w-auto"
               href="https://www.fiverr.com/customweb_pro"
               target="_blank"
               rel="noopener noreferrer"
@@ -139,7 +139,7 @@ export function HeroSection() {
             priority
           />
           </m.div>
-          <div className="absolute bottom-0 left-1/2 z-[2] flex w-[90%] -translate-x-1/2 flex-col items-center rounded-lg bg-[linear-gradient(180deg,#fff8ce_0%,#82a700_34%,#063b26_100%)] px-5 py-[13px] text-white lg:w-[83%]">
+          <div className="absolute bottom-0 left-1/2 z-[2] flex w-[90%] -translate-x-1/2 flex-col items-center rounded-lg bg-[linear-gradient(180deg,#A97DDE_0%,#8260AB_45%,#5B4478_100%)] px-5 py-[13px] text-white shadow-[0_18px_45px_rgba(91,68,120,0.28)] lg:w-[83%]">
             <strong className="text-[22px]">Biplob Hossain</strong>
             <small className="text-xs">CEO & Founder of Custom Web Pro</small>
           </div>
