@@ -29,6 +29,13 @@ const reviews = [
       "I am delighted with where we have landed. The communication and understanding really helped bring my project to life. I look forward to working together as we grow the business.",
   },
   {
+  name: "claude719",
+  country: "United States",
+  flag: "🇺🇸",
+  rating: 5,
+  review: "Very good job from all the team!"
+},
+  {
     name: "mohamedeltawous",
     country: "United Arab Emirates",
     flag: "🇦🇪",
@@ -105,7 +112,10 @@ function ReviewCard({ review }: { review: Review }) {
           <p className="mb-1.5 mt-1 text-[11px] text-[#0E0E0D] sm:text-xs">
             <span aria-hidden="true">{review.flag}</span> {review.country}
           </p>
-          <div className="flex items-center gap-1.5" aria-label={`${review.rating} out of 5 stars`}>
+          <div
+            className="flex items-center gap-1.5"
+            aria-label={`${review.rating} out of 5 stars`}
+          >
             {Array.from({ length: 5 }).map((_, index) => (
               <Star
                 key={index}
@@ -135,7 +145,10 @@ function ReviewRow({
   const repeated = [...items, ...items];
 
   return (
-    <div className="testimonial-row flex w-max gap-[var(--testimonial-gap)] [--testimonial-gap:20px] sm:[--testimonial-gap:40px]" data-reverse={reverse || undefined}>
+    <div
+      className="testimonial-row flex w-max gap-[var(--testimonial-gap)] [--testimonial-gap:20px] sm:[--testimonial-gap:40px]"
+      data-reverse={reverse || undefined}
+    >
       {repeated.map((review, index) => (
         <ReviewCard key={`${review.name}-${index}`} review={review} />
       ))}
@@ -148,7 +161,10 @@ export function TestimonialSection() {
   const secondRow = reviews.slice(4);
 
   return (
-    <section id="reviews" className="overflow-hidden bg-[#F9F9F9] py-[70px] lg:py-[100px]">
+    <section
+      id="reviews"
+      className="overflow-hidden bg-[#F9F9F9] py-[70px] lg:py-[100px]"
+    >
       <div className="mx-auto mb-12 max-w-[1656px] px-5 md:px-7 lg:mb-20 lg:px-0">
         <SectionHeading eyebrow="Client conversations" align="left">
           The partnership.
