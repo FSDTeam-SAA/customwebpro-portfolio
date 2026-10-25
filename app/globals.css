@@ -2,17 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+.intro-video {
+  transition-property: opacity, clip-path, transform, filter;
+  transition-timing-function: cubic-bezier(.83, 0, .17, 1);
+}
+
+@keyframes intro-mark-reveal {
+  0% { opacity: 0; transform: translateY(18px) scale(.78) rotate(-8deg); filter: blur(6px); }
+  15% { opacity: 1; transform: translateY(0) scale(1) rotate(0); filter: blur(0); }
+  34%, 88% { opacity: 1; transform: translateY(0) scale(1) rotate(0); filter: blur(0); }
+  100% { opacity: 1; transform: translateY(-2px) scale(.99) rotate(0); filter: blur(0); }
+}
+
+@keyframes intro-word-reveal {
+  0%, 52% { max-width: 0; opacity: 0; transform: translateX(-20px); filter: blur(7px); }
+  75%, 92% { max-width: 620px; opacity: 1; transform: translateX(0); filter: blur(0); }
+  100% { max-width: 620px; opacity: 1; transform: translateX(0); }
+}
+
+@keyframes intro-path-green {
+  0% { fill: transparent; stroke-dashoffset: 1; opacity: 0; }
+  8% { opacity: 1; }
+  68% { fill: transparent; stroke-dashoffset: 0; }
+  100% { fill: #033c38; stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes intro-path-yellow {
+  0% { fill: transparent; stroke-dashoffset: 1; opacity: 0; }
+  8% { opacity: 1; }
+  68% { fill: transparent; stroke-dashoffset: 0; }
+  100% { fill: #ffeb69; stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes intro-glow-pulse {
+  0%, 100% { opacity: 0; transform: scale(.7); }
+  25% { opacity: .35; transform: scale(1.5); }
+  55% { opacity: .12; transform: scale(1.15); }
+}
+
+@keyframes intro-orb-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(24px, -18px, 0) scale(1.08); }
+}
+
+.intro-mark { animation: intro-mark-reveal 5.2s cubic-bezier(.16, 1, .3, 1) both; }
+.intro-wordmark { animation: intro-word-reveal 5.2s cubic-bezier(.16, 1, .3, 1) both; }
+.intro-mark-glow { background: #ffeb69; filter: blur(30px); animation: intro-glow-pulse 5.2s ease-out both; }
+.intro-logo-path {
+  fill: transparent;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.intro-logo-path-one { stroke: #033c38; animation: intro-path-green 1.9s cubic-bezier(.65, 0, .35, 1) .45s forwards; }
+.intro-logo-path-two { stroke: #033c38; animation: intro-path-green 1.35s cubic-bezier(.65, 0, .35, 1) 1.85s forwards; }
+.intro-logo-path-three { stroke: #ffeb69; animation: intro-path-yellow 1.8s cubic-bezier(.65, 0, .35, 1) 2.75s forwards; }
+.intro-bg-grid {
+  background-image: linear-gradient(rgba(3, 60, 56, .14) 1px, transparent 1px), linear-gradient(90deg, rgba(3, 60, 56, .14) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(circle at center, black, transparent 70%);
+}
+.intro-bg-orb {
+  position: absolute;
+  height: 28rem;
+  width: 28rem;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: .22;
+  animation: intro-orb-drift 5s ease-in-out infinite;
+}
+.intro-bg-orb-left { left: -12rem; top: -12rem; background: #ffeb69; }
+.intro-bg-orb-right { bottom: -14rem; right: -12rem; background: #82a700; animation-delay: -2.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-mark,
+  .intro-wordmark,
+  .intro-logo-path,
+  .intro-mark-glow,
+  .intro-bg-orb {
+    animation-duration: 1ms !important;
+  }
+}
+
 @layer base {
   * {
     box-sizing: border-box;
   }
 
-  html,
+  html {
+    margin: 0;
+    min-width: 320px;
+    overflow-x: clip;
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    font-family: var(--font-plus-jakarta-sans), sans-serif;
+  }
+
   body {
     margin: 0;
     min-width: 320px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    overflow-x: clip;
+    overflow-y: visible;
     font-family: var(--font-plus-jakarta-sans), sans-serif;
   }
 
@@ -39,4 +131,31 @@
   select {
     font: inherit;
   }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:active,
+  a:active {
+    transform: scale(0.98);
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

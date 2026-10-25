@@ -19,7 +19,8 @@ export function Navbar({
 }) {
   const [open, setOpen] = useState(false);
   return (
-    <header className="sticky inset-x-0 top-0 z-[100] flex h-[74px] w-full shrink-0 items-center justify-between border-b border-[#d8d5ce] bg-white/95 px-4 shadow-[0_4px_20px_rgba(3,60,56,0.08)] backdrop-blur-xl sm:px-5 xl:h-[84px] xl:px-[6.875vw]">
+    <>
+    <header className="fixed inset-x-0 top-0 z-[110] flex h-[74px] w-full items-center justify-between border-b border-[#d8d5ce] bg-white/95 px-4 shadow-[0_4px_20px_rgba(3,60,56,0.08)] backdrop-blur-xl sm:px-5 xl:h-[84px] xl:px-[6.875vw]">
       <a
         className="flex items-center gap-2 whitespace-nowrap text-black no-underline"
         href="/#home"
@@ -61,5 +62,7 @@ export function Navbar({
         {open ? <X /> : <Menu />}
       </button>
     </header>
+    <div className="h-[74px] shrink-0 xl:h-[84px]" aria-hidden="true" />
+    </>
   );
 }

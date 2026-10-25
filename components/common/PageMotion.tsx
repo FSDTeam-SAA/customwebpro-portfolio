@@ -36,18 +36,18 @@ export function Reveal({
 }) {
   const reduceMotion = useReducedMotion();
   const initialOffset = {
-    up: { x: 0, y: 52 },
-    left: { x: -52, y: 0 },
-    right: { x: 52, y: 0 },
+    up: { x: 0, y: 44 },
+    left: { x: -44, y: 0 },
+    right: { x: 44, y: 0 },
   }[direction];
 
   return (
     <m.div
       className={className}
-      initial={reduceMotion ? false : { opacity: 0, ...initialOffset, scale: 0.985 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, x: 0, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: "some", margin: "0px 0px -8% 0px" }}
-      transition={{ type: "spring", stiffness: 72, damping: 18, mass: 0.75, delay }}
+      initial={reduceMotion ? false : { opacity: 0, ...initialOffset, scale: 0.99, filter: "blur(8px)" }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, x: 0, y: 0, scale: 1, filter: "blur(0px)" }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -5% 0px" }}
+      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay }}
     >
       {children}
     </m.div>

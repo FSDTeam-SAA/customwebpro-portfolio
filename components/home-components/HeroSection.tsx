@@ -1,8 +1,16 @@
 "use client";
 
-import { m, useReducedMotion } from "framer-motion";
+import {
+  animate,
+  m,
+  useInView,
+  useMotionValue,
+  useReducedMotion,
+  useTransform,
+} from "framer-motion";
 import { ArrowUpRight, Star } from "lucide-react";
 import Image from "next/image";
+import { useEffect, useRef } from "react";
 import { A } from "./constants";
 const tags = [
   "Mobile App Development",
@@ -10,7 +18,46 @@ const tags = [
   "Flutter Developer",
   "AI Integration",
   "Web Development",
+  "Online Tech Mentor/Instruction"
 ];
+
+function AnimatedNumber({
+  value,
+  decimals = 0,
+  suffix = "",
+}: {
+  value: number;
+  decimals?: number;
+  suffix?: string;
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.8 });
+  const reduceMotion = useReducedMotion();
+  const count = useMotionValue(reduceMotion ? value : 0);
+  const display = useTransform(
+    count,
+    (latest) => `${latest.toFixed(decimals)}${suffix}`,
+  );
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    if (reduceMotion) {
+      count.set(value);
+      return;
+    }
+
+    const controls = animate(count, value, {
+      duration: 2,
+      ease: [0.22, 1, 0.36, 1],
+    });
+
+    return () => controls.stop();
+  }, [count, isInView, reduceMotion, value]);
+
+  return <m.span ref={ref}>{display}</m.span>;
+}
+
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
   const item = {
@@ -39,24 +86,26 @@ export function HeroSection() {
           </m.p>
           <m.div variants={item} className="flex w-full flex-wrap items-center gap-2 rounded-2xl bg-white p-2 md:w-fit md:gap-[15px] md:p-4">
             {[
-              ["1000+", "Reviews"],
-              ["5.0", "Reviews"],
-              ["Level 2", "Fiverr Seller"],
-            ].map(([a, b], i) => (
+              { title: <AnimatedNumber value={200} suffix="+" />, label: "Reviews" },
+              { title: <AnimatedNumber value={5} decimals={1} />, label: "Ratings" },
+              { title: "Top Rated", label: "Fiverr Seller" },
+            ].map(({ title, label }, i) => (
               <div
-                key={a}
+                key={label}
                 className="flex min-w-[calc(50%_-_4px)] flex-1 flex-col items-center gap-1 rounded-lg bg-[#033c38] px-3.5 py-2 text-white md:min-w-[112px] md:px-[13px]"
               >
                 <strong className="flex items-center gap-1 text-base">
-                  {a}
+                  {title}
                   {i === 1 && <Star size={15} fill="#ffeb69" />}
                 </strong>
-                <small className="text-[14px] text-[#d4d9cc]">{b}</small>
+                <small className="text-[14px] text-[#d4d9cc]">{label}</small>
               </div>
             ))}
             <a
               className="flex h-12 w-full  items-center justify-center gap-2 rounded-lg border border-[#ffeb69] bg-[#087a4b] px-[22px] text-white no-underline md:w-auto"
-              href="#contact"
+              href="https://www.fiverr.com/customweb_pro"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               ● Fiverr <ArrowUpRight size={18}  className="border rounded-full !w-7 !h-7"/>
             </a>

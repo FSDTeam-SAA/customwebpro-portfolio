@@ -5,24 +5,24 @@ import { useState } from "react";
 import { SectionHeading } from "../home-components/shared";
 const faqs = [
   [
-    "Which service should my business start with?",
-    "We start with your goal and recommend the most effective path—website, mobile app, automation, or a tailored AI solution.",
+    "1. What Services Does CustomWeb Pro Offer?",
+    "CustomWeb Pro offers AI-powered website development, mobile app development, full-stack web solutions, SaaS platforms, AI agents, chatbots, business automation, WordPress website design, and interactive online coding lessons.",
   ],
   [
-    "How does the 48-hour match window work?",
-    "After reviewing your brief, our team contacts you with the right specialist and a clear next step.",
+    "2. Can You Build A Custom AI-Powered Website Or Mobile Application For My Business?",
+    "Yes! I develop custom AI-powered websites and mobile applications tailored to your business goals. From AI integrations and intelligent chatbots to scalable web and mobile solutions, I help turn your ideas into practical digital products.",
   ],
   [
-    "Can I use 48Date in my browser?",
-    "Yes. Our solutions are planned around the platforms and devices your audience actually uses.",
+    "3. Do You Offer WordPress Website Design And Redesign Services?",
+    "Yes! I provide professional WordPress website design, redesign, customization, and development services. Whether you need a new business website or want to improve an existing one, I can help create a modern, responsive, and user-friendly experience.",
   ],
   [
-    "Do I need Premium?",
-    "No. Tell us what you need and we will recommend a package that fits your scope and budget.",
+    "4. Do You Provide Ongoing Support And Customization After Project Delivery?",
+    "Yes! I can help with bug fixes, feature enhancements, website improvements, and additional functionality based on your project requirements. The scope of ongoing support and maintenance can be discussed before starting the project.",
   ],
   [
-    "How can I manage my privacy?",
-    "Your project details and business information are handled confidentially throughout the process.",
+    "5. How Can I Get Started, And How Much Does A Project Cost?",
+    "Getting started is easy! Share your idea, project requirements, and goals with me. I’ll review your needs and recommend a suitable solution, timeline, and budget. Project-based services start at $90, AI and full-stack development projects start at $150, and hourly services start at $25, depending on the scope and complexity of the work.",
   ],
 ];
 export function FaqSection() {
@@ -30,7 +30,7 @@ export function FaqSection() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-10 bg-white px-5 py-[70px] md:px-7 xl:grid-cols-[minmax(320px,1fr)_minmax(0,900px)] xl:gap-[clamp(48px,6.8vw,130px)] xl:px-[6.875vw] xl:py-[100px]">
+    <section id="faq" className="mx-auto grid max-w-[1920px] grid-cols-1 items-start gap-10 bg-white px-5 py-[70px] md:px-7 xl:grid-cols-[minmax(320px,1fr)_minmax(0,900px)] xl:gap-[clamp(48px,6.8vw,130px)] xl:px-[6.875vw] xl:py-[100px]">
       <div className="self-start xl:sticky xl:top-28">
         <SectionHeading eyebrow="A few things you might ask" align="left">
           Let&apos;s make

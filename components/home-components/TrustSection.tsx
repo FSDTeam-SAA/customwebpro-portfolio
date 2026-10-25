@@ -15,7 +15,7 @@ const cards = [
   {
     image: "imgImage24.png",
     title: "Timely Delivery",
-    text: "Committed to delivering high-quality AI, app, and web projects on schedule—every time, without compromising performance or precision.",
+    text: "Committed to delivering high-quality AI, app, and web projects on schedule every time, without compromising performance or precision.",
   },
 ];
 export function TrustSection() {

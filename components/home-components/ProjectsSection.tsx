@@ -47,7 +47,7 @@ export function ProjectsSection() {
           <p className="text-[13px] leading-5 tracking-[0.3px] sm:text-xl sm:leading-[1.5] sm:tracking-[0.4px]">
             Explore a diverse portfolio of completed works that showcase our creativity, technical expertise, and commitment to client satisfaction. Each project reflects our passion for quality and innovation.
           </p>
-          <a href="#contact" className="mt-4 inline-flex h-[52px] items-center justify-center gap-2 rounded-lg bg-[#063B26] px-7 text-base font-medium text-white transition-colors hover:bg-[#0a5138] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#063B26] sm:text-xl">
+          <a href="/portfolio" className="mt-4 inline-flex h-[52px] items-center justify-center gap-2 rounded-lg bg-[#063B26] px-7 text-base font-medium text-white transition-colors hover:bg-[#0a5138] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#063B26] sm:text-xl">
             View All Project
             <ArrowUpRight className="h-5 w-5" strokeWidth={1.8} />
           </a>
