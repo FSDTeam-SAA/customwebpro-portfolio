@@ -3,8 +3,6 @@
 import { m, useReducedMotion } from "framer-motion";
 import { ServiceCard, services } from "@/components/common";
 
-const allServices = [...services, ...services];
-
 export function ServicesGrid() {
   const reduceMotion = useReducedMotion();
 
@@ -17,9 +15,9 @@ export function ServicesGrid() {
         viewport={{ once: true, amount: "some", margin: "0px 0px -6% 0px" }}
         variants={{ visible: { transition: { staggerChildren: 0.11 } } }}
       >
-        {allServices.map((service, index) => (
+        {services.map((service) => (
           <m.div
-            key={`${service.title}-${index}`}
+            key={service.title}
             variants={{
               hidden: { opacity: 0, y: 42, rotateX: 5, scale: 0.97 },
               visible: { opacity: 1, y: 0, rotateX: 0, scale: 1 },

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { A } from "./constants";
+import Link from "next/link";
 
 const pageLinks = [
   ["Home", "/#home"],
@@ -25,21 +25,21 @@ export function Footer() {
       <div className="mx-auto max-w-[1656px]">
         <div className="grid gap-12 pb-16 sm:grid-cols-2 lg:grid-cols-[1.25fr_.6fr_1fr_.7fr] lg:gap-16 lg:pb-24">
           <div className="flex max-w-[390px] flex-col items-start">
-            <a
+            <Link
               href="/#home"
               className="flex items-center gap-2 text-white no-underline"
             >
               <Image
-                src={`${A}imgGroup6.svg`}
-                alt=""
-                width={55}
-                height={54}
-                className="h-12 w-12 shrink-0"
+                src="/images/home/newlogo.png"
+                alt="CustomWeb Pro"
+                width={95}
+                height={92}
+                className="h-[34px] w-[34px] shrink-0 rounded-lg bg-white p-1 sm:h-[38px] sm:w-[38px] xl:h-[46px] xl:w-[47px]"
               />
-              <strong className="whitespace-nowrap text-[25px] font-extrabold leading-none sm:text-[30px]">
-                CustomWeb <span className="text-[#A97DDE]">Pro</span>
+              <strong className="whitespace-nowrap text-lg font-extrabold tracking-[-1px] sm:text-[21px] xl:text-[28px]">
+                Custom<span className="text-[#A97DDE]">Web</span> Pro
               </strong>
-            </a>
+            </Link>
 
             <p className="mt-8 text-base leading-[1.45] text-white/90 sm:text-lg">
               A digital agency specializes in creating online strategies for
@@ -80,13 +80,12 @@ export function Footer() {
             </h2>
             <nav className="flex flex-col items-start gap-5">
               {serviceLinks.map((label) => (
-                <a
+                <p
                   key={label}
-                  href="/services"
                   className="text-base text-white/90 no-underline transition-colors hover:text-[#A97DDE] sm:text-lg"
                 >
                   {label}
-                </a>
+                </p>
               ))}
             </nav>
           </div>

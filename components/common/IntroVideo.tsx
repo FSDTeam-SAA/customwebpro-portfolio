@@ -19,7 +19,7 @@ export function IntroVideo() {
   useEffect(() => {
     if (phase !== "visible") return;
 
-    const safetyTimer = window.setTimeout(finishIntro, 5200);
+    const safetyTimer = window.setTimeout(finishIntro, 3600);
     return () => window.clearTimeout(safetyTimer);
   }, [finishIntro, phase]);
 

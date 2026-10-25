@@ -1,4 +1,4 @@
-import { ContactSection, PartnershipSection } from "@/components/common";
+
 import { MotionProvider, Reveal } from "@/components/common/PageMotion";
 import { Footer, Navbar } from "@/components/home-components";
 import { PortfolioGallery, PortfolioHero } from "@/components/portfolio-components";
@@ -10,12 +10,6 @@ export default function PortfolioPage() {
         <Navbar active="Portfolio" />
         <Reveal><PortfolioHero /></Reveal>
         <Reveal direction="right"><PortfolioGallery /></Reveal>
-        <Reveal direction="left">
-          <PartnershipSection />
-        </Reveal>
-        <Reveal>
-          <ContactSection />
-        </Reveal>
         <Reveal>
           <Footer />
         </Reveal>
